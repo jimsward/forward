@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node app",
-    "postinstall" : "cd public && npm install && node.exe node_modules/bower/bin/bower install"
+    "postinstall" : "cd public && npm install"
 
   },
   "dependencies": {
