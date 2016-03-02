@@ -28,3 +28,15 @@
   content: "";
   padding: 0;
 }
+a {text-decoration: none}
+
+ul { list-style-type: none;}
+
+.content {border:1px solid black; margin:100px 400px;}
+
+input, textarea {
+  margin:  10px }
+
+textarea {width : 244px; margin : 0;}
+
+form, p {padding :10px}

@@ -1,5 +1,12 @@
-<p>This is the partial for view 2.</p>
-<p>
-  Showing of 'interpolate' filter:
-  {{ 'Current version is v%VERSION%.' | interpolate }}
-</p>
+<div ng-controller="View2Ctrl" class="content">
+
+  <p>You can reach me at Jim@JimSward.com or you could shoot me a message:</p>
+  <form id="contact" ng-submit="contactform()">
+    <div><label for="name">Name</label><input type="text" name="name" id="name" ng-model="contact.name" required/></div>
+    <div><label for="email">Email</label><input type="email" name="email" id="email" ng-model="contact.email" required/></div>
+    <div><textarea name="message" id="message" placeholder="Message" ng-model="contact.message" required></textarea></div>
+    <input type="submit" value="Send" id="submitmessage" />
+  </form>
+
+
+</div>

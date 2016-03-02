@@ -8,7 +8,7 @@ angular.module('myApp.view1', ['ngRoute'])
     controller: 'View1Ctrl'
   });
 }])
+    .controller('View1Ctrl', [ '$routeParams', '$scope', '$http', '$route', '$location', '$rootScope', function( $routeParams, $scope, $http, $route, $location, $rootScope ) {
+        $rootScope.hideimage = false
+    }]);
 
-.controller('View1Ctrl', [function() {
-
-}]);

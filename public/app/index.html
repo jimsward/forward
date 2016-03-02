@@ -17,11 +17,13 @@
 </head>
 <body>
 <h1>We've Left Guerneville</h1>
-  <ul class="menu">
+  <ul class="	<ul class="nav nav-tabs">
+    <li><a href="#/view1">Home</a><li>
     <li><a href="http://sonomawild.us">Find us in the Cloud</a></li>
     <li><a href="http://stump3.us">Send Money</a></li>
+    <li><a href="#/view2">Contact</a></li>
   </ul>
-  <img src="images/oz.jpg">
+  <img src="images/oz.jpg" ng-hide="hideimage">
 
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -29,7 +31,7 @@
 
   <div ng-view></div>
 
-  <div>Angular seed app: v<span app-version></span></div>
+
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
