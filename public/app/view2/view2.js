@@ -25,7 +25,7 @@ angular.module('myApp.view2', ['ngRoute'])
                 }))
                 .then(function () {
                     //alert('Form submitted.')
-
+                    $location.path('/view1')
                 })
         }
     } ]);

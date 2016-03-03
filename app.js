@@ -28,7 +28,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 var uri = process.env.MONGOLAB_URI || process.argv[2]
-console.log(uri)
 //MongoClient.connect('mongodb://localhost:27017/checking', {server: {poolSize: 1}}, function(err, db) {
 
 MongoClient.connect( uri, function(err, db) {
