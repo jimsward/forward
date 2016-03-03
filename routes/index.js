@@ -1,18 +1,20 @@
-var express = require('express');
-var router = express.Router();
 var SendEmail = require('./send')
 var ContentHandler = require('./content')
-var sendEmail = new SendEmail()
+
 
 
 module.exports = exports = function(app, db) {
+
+  console.log('index.js')
+
   var contentHandler = new ContentHandler(db)
+  var sendEmail = new SendEmail()
   /* GET home page. */
-  router.get('/', function (req, res, next) {
+  app.get('/', function (req, res, next) {
     return res.redirect('app/index.html')
   });
-  router.post('/sendemail', sendEmail.send);
-  router.post('/contact', contentHandler.contactForm)
+  app.post('/sendemail', sendEmail.send);
+  app.post('/contact', contentHandler.contactForm)
 
-  module.exports = router;
+  //module.exports = router;
 }

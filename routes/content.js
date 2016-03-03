@@ -3,13 +3,18 @@
  */
 MessagesDAO = require('../messages').MessagesDAO
 
-function ContentHandler(app, db) {
+function ContentHandler(db) {
+    var messages = new MessagesDAO(db)
+
     this.contactForm = function( req, res, next ){
+        console.log('req : ' + req.body.text)
         var message = req.body
-        console.log('message  : ' + message)
+
         messages.insertMessage( message, function( err, result ){
+            console.log('error : ' + err)
             if (err) return next(err)
-            res.end()
+
+            res.send('result')
         } )
     }
 
