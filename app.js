@@ -27,7 +27,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-var uri = process.env.MONGOLAB_URI || process.argv[2]
+var uri = process.env.MONGOLAB_URI || 'mongodb://heroku_v0znwk08:ob26stp5kamtac2qkm78uhqhm7@ds037145.mongolab.com:37145/heroku_v0znwk08'
 //MongoClient.connect('mongodb://localhost:27017/checking', {server: {poolSize: 1}}, function(err, db) {
 
 MongoClient.connect( uri, function(err, db) {
@@ -36,7 +36,8 @@ MongoClient.connect( uri, function(err, db) {
 
 
  // app.use('/', routes);
-  app.use('/users', users);
+  app.use('/users'
+      , users);
 
   routes(app, db);
 
@@ -73,7 +74,7 @@ MongoClient.connect( uri, function(err, db) {
 
 
 
-  var port = process.env.PORT || 3000;
+  var port = process.env.PORT || 8000;
   app.listen(port);
   console.log('Express server listening on port ' + port);
 

@@ -40,3 +40,7 @@ input, textarea {
 textarea {width : 244px; margin : 0;}
 
 form, p {padding :10px}
+
+.slideshow {width : 800px; margin : auto}
+
+blockquote {border: 1px solid grey; padding: 4px}
