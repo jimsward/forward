@@ -15,6 +15,9 @@ module.exports = exports = function(app, db) {
   });
   app.post('/sendemail', sendEmail.send);
   app.post('/contact', contentHandler.contactForm)
+  app.get('/fence', function(req, res, next){
+    return res.redirect('app/index.html#/view3')
+  })
 
   //module.exports = router;
 }

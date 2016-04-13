@@ -98,11 +98,11 @@ blockquote {border: 1px solid grey; padding: 4px}
   background-color: #fff;
   border-radius: 10px;
   display: inline-block;
-  height: 12px;
+  height: 6px;
   margin: 4px;
   padding: 5px;
   position: relative;
-  width: 12px;
+  width: 6px;
   cursor: pointer
 }
 .ng-fader-pagination li:first-child {
