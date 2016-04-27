@@ -15,7 +15,7 @@ function SendEmail() {
         service: 'Yahoo',
         auth: {
             user: 'guernevilleguys@yahoo.com', //  email id
-            pass: 'polello' //  password
+            pass: 'Ec2A_xx' //  password
         }
     });
 	var text = req.body.text

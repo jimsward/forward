@@ -10,13 +10,14 @@ angular.module('myApp.view3', ['ngRoute'])
 }])
     .controller('View3Ctrl', [ '$routeParams', '$scope', '$http', '$route', '$location', '$rootScope', function( $routeParams, $scope, $http, $route, $location, $rootScope ) {
         $rootScope.hideimage = true
+
     }])
     .directive('ngFader', function($interval) {
 
         function link(scope){
 
             //Set your interval time. 4000 = 4 seconds
-            scope.setTime = 40000;
+            scope.setTime = 4000;
 
             //List your images here.
             scope.images = [{
@@ -85,19 +86,26 @@ angular.module('myApp.view3', ['ngRoute'])
                 }
             };
 
+            scope.show = function(idx){
+                if (scope.selectedImage==idx) {
+                    console.log('selectedImage: ' + scope.selectedImage + ' ' + 'idx: ' + idx)
+
+                    return "show";
+                }
+            };
+
             scope.startSlider = function(){
                 scope.intervalPromise = $interval(scope.autoSlider, scope.setTime);
                 scope.activeStart = true;
                 scope.activePause = false;
             };
-            scope.startSlider();
 
-            scope.show = function(idx){
-                if (scope.selectedImage==idx) {
-                    return "show";
+            scope.loaded = function(idx){
+               if ((idx + 1) === scope.numberOfImages) {
+                    scope.startSlider();
                 }
-            };
 
+            };
 
         }
 
@@ -107,7 +115,7 @@ angular.module('myApp.view3', ['ngRoute'])
             template: '<div class="ng-fader">'+
                 //images will render here
             '<ul>' +
-            '<li ng-repeat="image in images" ng-click="toggleStartStop()" ng-swipe-right="sliderBack()" ng-swipe-left="sliderForward()"><img data-ng-src="{{image.src}}" data-ng-alt="{{image.alt}}" ng-class="show($index)"/></li>' +
+            '<li ng-repeat="image in images track by $index" ng-click="toggleStartStop()" ng-swipe-right="sliderBack()" ng-swipe-left="sliderForward()"><img ng-init="loaded($index)" data-ng-src="{{image.src}}" data-ng-alt="{{image.alt}}" ng-class="show($index)"></li>' +
             '</ul>' +
                 //pagination dots will render here
             '<div class="ng-fader-pagination">' +
