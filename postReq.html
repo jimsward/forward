@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+</head>
+<body>
+
+
+<script>
+    var data = {"first_name":"Jim", "last_name" : "Sward", "email" : "jim@jimswardcom", "phone" : "707-276-6836", "cover_letter" : "Attached", "urls" : ["http://www.jimsward.com/app/index.html#/projects", "https://github.com/jimsward?tab=repositories", "https://github.com/jimsward?tab=repositories"]}
+    data = JSON.stringify(data)
+    $.ajax({
+    url: 'http://127.0.0.1:4000/test',
+//    url: 'https://app.close.io/hackwithus/',
+    type: 'POST',
+    crossDomain : true,
+    data: data,
+    contentType: 'application/json; charset=utf-8',
+    success: function(msg) {
+        alert(msg.first_name);
+    }
+});</script>
+
+</body>
+</html>

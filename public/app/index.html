@@ -17,18 +17,29 @@
   <!--<link type="stylesheet" rel="stylesheet" href="css/ngFader.css">-->
  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
   <style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}</style>
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 </head>
-<body>
-<h1>We've Left Guerneville</h1>
-  <ul class="nav nav-tabs">
-    <li><a href="#/view1">Home</a><li>
-    <li><a href="http://sonomawild.us">Find us in the Cloud</a></li>
-    <li><a href="http://stump3.us">Send Money</a></li>
-    <li><a href="#/view2">Contact</a></li>
-    <li><a href="#/view3">Spite Fence</a></li>
-</ul>
-  <img src="images/oz.jpg" ng-hide="hideimage">
+<body layout="column">
+
+
+<toolbar></toolbar>
+<md-toolbar style="position : fixed; width:inherit; text-align: center !important; font-family: 'Roboto'; top:64px; background-color: white">
+
+
+<div  layout-align="left" >
+
+  <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links" style="text-align:center">
+    <md-nav-item md-nav-href="#/view1" name="home">Home</md-nav-item>
+    <md-nav-item md-nav-href="http://sonomawild.us">Find us in the Cloud</md-nav-item>
+    <md-nav-item md-nav-href="http://stump3.us">Send Money</md-nav-item>
+    <md-nav-item md-nav-href="#/view2">Contact</md-nav-item>
+    <md-nav-item md-nav-href="#/view3">Spite Fence</md-nav-item>
+</md-nav-bar>
+  </div>
+</md-toolbar>
+
 
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -37,6 +48,7 @@
   <div ng-view></div>
 
 
+<img src="images/oz.jpg" ng-hide="hideimage">
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
@@ -46,10 +58,27 @@
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-touch.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-animate.js"></script>
 
+<script src="node_modules/angular-jwt/dist/angular-jwt.js"></script>
+<script src="node_modules/angular-storage/dist/angular-storage.js"></script>
+<script src="node_modules/auth0-angular/build/auth0-angular.js"></script>
+<script src="node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular-animate.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular-aria.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular-messages.js"></script>
+<script src="http://ngmaterial.assets.s3.amazonaws.com/svg-assets-cache.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+<script src="//cdn.auth0.com/js/lock-9.2.min.js"></script>
+
+
   <script src="app.js"></script>
   <script src="view1/view1.js"></script>
   <script src="view2/view2.js"></script>
   <script src="view3/view3.js"></script>
+<script src="toolbar/toolbar.dir.js"></script>
+
+<script src="home/home.js"></script>
+
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>
   <script src="components/version/interpolate-filter.js"></script>
