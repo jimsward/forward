@@ -113,7 +113,7 @@ config(['$routeProvider', function($routeProvider) {
             }
             else {
                 // Otherwise, redirect to the home route
-                //$location.path('/home');
+                $location.path('/home');
             }
         });
 
