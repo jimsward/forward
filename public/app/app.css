@@ -247,7 +247,9 @@ blockquote {margin-top: 160px; border :1px solid #ccc; padding: 4px}
   }
 }
 
-md-toolbar {color:#ffffff !important; font-size: 48px; width:100% !important; box-shadow: 0px 0px 4px 4px}
+div.slideshow {margin-top : 80px}
+
+md-toolbar {color:#ffffff !important; font-size: 48px; width:100% !important; z-index: 1000 !important;}
 
 md-nav-ink-bar {
   color: 'pink';
