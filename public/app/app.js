@@ -6,7 +6,8 @@ angular.module('myApp', [
   'myApp.view1',
   'myApp.view2',
   'myApp.view3',
-  'myApp.version',
+    'myApp.view4',
+    'myApp.version',
   'ngAnimate',
     'auth0',
     'angular-storage',
@@ -20,6 +21,10 @@ config(['$routeProvider', function($routeProvider) {
       .when('/view3', {
         templateUrl: 'view3/view3.html',
         controller: 'View3Ctrl'
+      })
+      .when('/view4', {
+          templateUrl: 'view4/view4.html',
+          controller: 'View4Ctrl'
       })
       .when('/home', {
           templateUrl: 'home/home.html',
@@ -97,7 +102,7 @@ config(['$routeProvider', function($routeProvider) {
         $httpProvider.interceptors.push('jwtInterceptor');
         $httpProvider.interceptors.push('redirect');
     })
-    .run(function($rootScope, auth, store, jwtHelper, $location) {
+    /*.run(function($rootScope, auth, store, jwtHelper, $location) {
 
         $rootScope.$on('$locationChangeStart', function() {
             // Get the JWT that is saved in local storage
@@ -117,5 +122,5 @@ config(['$routeProvider', function($routeProvider) {
             }
         });
 
-    })
+    })*/
 
