@@ -17,7 +17,7 @@ angular.module('myApp', [
     'myApp.home'
 ]).
 config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/view1'})
+  $routeProvider.otherwise({redirectTo: '/view4'})
       .when('/view3', {
         templateUrl: 'view3/view3.html',
         controller: 'View3Ctrl'
